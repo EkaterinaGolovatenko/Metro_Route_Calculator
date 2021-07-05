@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+  <appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    <File name="RootGeneral" fileName="RootGeneral">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+    <File name="input_errors.log" fileName="input_errors.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+    <File name="exceptions.log" fileName="exceptions.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+    <File name="search.log" fileName="search.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+  </appenders>
+  <loggers>
+    <logger name="com.comp.logger3" additivity="false">
+      <appender-ref ref="exceptions.log" level="WARN"/>
+    </logger>
+    <logger name="com.comp.logger2" additivity="false">
+      <appender-ref ref="input_errors.log" level="error"/>
+    </logger>
+    <logger name="com.comp.logger4" additivity="false">
+      <appender-ref ref="search.log" level="INFO"/>
+    </logger>
+    <root level="info">
+      <appender-ref ref="RootGeneral" level="info"/>
+    </root>
+  </loggers>
+</configuration>
